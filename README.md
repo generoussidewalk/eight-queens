@@ -38,12 +38,12 @@ If you already have a Firebase project with a Firestore database:
 Never commit `.env` or the key file; both are already listed in `.gitignore`.
 ## Play
 
-- Start a run. The server picks one of 7–8 predetermined sets for each puzzle.
+- Start a run. The server picks one of 8 predetermined sets for each puzzle.
 - Select a piece, then select a square. Select a placed piece to remove it.
 - Pieces must not attack each other in either direction. There are no opponents, turns, captures, or pawns. Kings attack one square in any direction.
 - Red squares mark conflicting pieces. A fully placed, safe board is submitted automatically.
 - Express verifies the exact assigned pieces, bounds, duplicate squares, and attack rules before accepting a solution.
-- Complete all eight puzzles to save the final time.
+- Complete all six puzzles to save the final time.
 
 
  Human difficulty varies between sets; it is not mathematically ranked, I designed the puzzles myself. Answers are not offered in the game. 

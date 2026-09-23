@@ -26,18 +26,6 @@ export const LEVELS = [
     [Q, Q, Q, Q, Q, R, B, K], [Q, Q, Q, Q, R, R, N, K], [Q, Q, Q, Q, Q, B, N, N],
   ] },
   { number: 6, name: '', size: 9, sets: [
-    [Q, Q, Q, Q, Q, Q, Q, Q, Q], [Q, Q, Q, Q, Q, Q, Q, Q, R],
-    [Q, Q, Q, Q, Q, Q, Q, Q, B], [Q, Q, Q, Q, Q, Q, Q, Q, N],
-    [Q, Q, Q, Q, Q, Q, Q, R, R],
-    [Q, Q, Q, Q, Q, Q, R, B, N], [Q, Q, Q, Q, Q, R, R, B, K],
-  ] },
-  { number: 7, name: '', size: 8, sets: [
-    [Q, Q, R, R, B, B, N, N, K, K], [Q, R, R, R, B, B, N, N, N, K],
-    [Q, Q, R, B, B, B, N, N, K, K], [R, R, R, B, B, N, N, N, K, K],
-    [Q, Q, Q, R, R, B, N, N, K, K], [Q, R, R, B, B, B, B, N, N, K, K],
-    [Q, Q, R, R, B, B, N, N, N, K, K], [R, R, R, R, B, B, B, N, N, K, K],
-  ] },
-  { number: 8, name: '', size: 9, sets: [
     [Q, Q, R, R, R, B, B, B, N, N, K, K], [Q, Q, Q, R, R, B, B, N, N, N, K, K],
     [Q, R, R, R, B, B, B, B, N, N, N, K, K], [Q, Q, R, R, B, B, B, N, N, N, N, K, K],
     [R, R, R, R, B, B, B, N, N, N, K, K, K], [Q, Q, R, R, R, B, B, N, N, N, K, K, K],

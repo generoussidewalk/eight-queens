@@ -4,7 +4,7 @@ I like this puzzle, so I made it a little more difficult.
 
 My project is an implementation of the Eight Queens puzzle, where a player needs to place eight queens on a chess board, without any of them attacking each other. In this project, I just adjusted a few aspects of this problem to make it a little more interesting.
 
-##Run
+## Run
 
 https://stackblitz.com/github/generoussidewalk/eight-queens
 

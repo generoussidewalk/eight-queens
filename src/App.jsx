@@ -63,7 +63,12 @@ export default function App() {
         setClockOffset(data.serverNow - Date.now());
         setClock(Date.now());
       } catch (failure) {
-        if (active) setResumeError(failure.message);
+        if (!active) return;
+        if (failure.status === 404) {
+          try { sessionStorage.removeItem(SESSION_KEY); } catch {}
+        } else {
+          setResumeError(failure.message);
+        }
       } finally {
         if (active) setRestoring(false);
       }
@@ -103,6 +108,13 @@ export default function App() {
     }
   }
 
+  function forgetRun() {
+    try { sessionStorage.removeItem(SESSION_KEY); } catch {}
+    setRun(null);
+    setPositions([]);
+    pendingStartId.current = null;
+  }
+
   async function submitSolution(solution) {
     if (submitting.current) return;
     submitting.current = true;
@@ -119,7 +131,12 @@ export default function App() {
       setClock(Date.now());
       setPositions([]);
     } catch (failure) {
-      setError(failure.message);
+      if (failure.status === 404) {
+        forgetRun();
+        setError('This run was lost because the server restarted. Start a new run.');
+      } else {
+        setError(failure.message);
+      }
     } finally {
       setBusy(false);
       submitting.current = false;
@@ -131,13 +148,10 @@ export default function App() {
     if (run && run.status !== 'completed') {
       request(`/api/runs/${run.id}`, { method: 'DELETE' }).catch(() => {});
     }
-    try { sessionStorage.removeItem(SESSION_KEY); } catch {}
-    setRun(null);
-    setPositions([]);
+    forgetRun();
     setTab('play');
     setError('');
     setResumeError('');
-    pendingStartId.current = null;
   }
 
   function clickSquare(row, col) {

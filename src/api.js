@@ -9,7 +9,8 @@ export async function request(path, options = {}) {
     });
     const data = await response.json().catch(() => null);
     if (!response.ok || !data) {
-      throw new Error(data?.error || 'Could not reach the server. Make sure npm run dev:all is running.');
+      throw Object.assign(new Error(data?.error || 'Could not reach the server. Make sure npm run dev:all is running.'),
+        { status: response.status });
     }
     return data;
   } catch (error) {
